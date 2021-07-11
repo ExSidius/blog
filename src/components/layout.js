@@ -57,7 +57,7 @@ const Layout = ({ location, title, children }) => {
       <header className="global-header">{header}</header>
       <main>{children}</main>
       <footer className="text-center">
-        © {new Date().getFullYear()}, Built with
+        © Ram's Musings {new Date().getFullYear()}, Built with
         {` `}
         <a href="https://www.gatsbyjs.com" className="footer-link">
           Gatsby
