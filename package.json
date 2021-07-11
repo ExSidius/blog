@@ -8,6 +8,7 @@
     "url": "https://github.com/gatsbyjs/gatsby/issues"
   },
   "dependencies": {
+    "bootstrap": "^4.6.0",
     "gatsby": "^3.9.0",
     "gatsby-plugin-feed": "^3.9.0",
     "gatsby-plugin-gatsby-cloud": "^2.9.0",
@@ -27,6 +28,7 @@
     "gatsby-transformer-sharp": "^3.9.0",
     "prismjs": "^1.24.1",
     "react": "^17.0.1",
+    "react-bootstrap": "^1.6.1",
     "react-dom": "^17.0.1",
     "react-helmet": "^6.1.0",
     "typeface-merriweather": "0.0.72",
@@ -43,7 +45,7 @@
   "main": "n/a",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/gatsbyjs/gatsby-starter-blog.git"
+    "url": "git+https://github.com/zaycation/ramsmusings001"
   },
   "scripts": {
     "build": "gatsby build",

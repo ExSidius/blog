@@ -1,5 +1,8 @@
 import * as React from "react"
 import { Link } from "gatsby"
+import { Navbar, Nav, Image } from "react-bootstrap"
+
+import circle from "../images/gatsby-icon.png"
 
 const Layout = ({ location, title, children }) => {
   const rootPath = `${__PATH_PREFIX__}/`
@@ -8,15 +11,47 @@ const Layout = ({ location, title, children }) => {
 
   if (isRootPath) {
     header = (
-      <h1 className="main-heading">
-        <Link to="/">{title}</Link>
-      </h1>
+      <Navbar variant="light" className="mb-4 px-3 py-3">
+        <Navbar.Brand
+          href="/"
+          className="d-flex flex-row align-items-center blank-link title-link"
+        >
+          <Image src={circle} roundedCircle width="25px" className="mr-2" />
+          {title}
+        </Navbar.Brand>
+        <Nav className="ml-auto">
+          <Nav.Link href="#home" className="mr-2 blank-link">
+            View Src
+          </Nav.Link>
+          <Nav.Link
+            href="#features"
+            className="follow-btn"
+          >
+            Follow Me
+          </Nav.Link>
+        </Nav>
+      </Navbar>
     )
   } else {
     header = (
-      <Link className="header-link-home" to="/">
-        {title}
-      </Link>
+      <Navbar variant="light" className="mb-4 px-3 py-3">
+        <Navbar.Brand href="/" className="d-flex flex-row align-items-center">
+          <Image src={circle} roundedCircle width="25px" className="mr-2" />
+          {title}
+        </Navbar.Brand>
+        <Nav className="ml-auto">
+          <Nav.Link href="#home" className="mr-2">
+            View Src
+          </Nav.Link>
+          <Nav.Link
+            href="#features"
+            style={{ background: "black", color: "white" }}
+            className="px-3"
+          >
+            Follow Me
+          </Nav.Link>
+        </Nav>
+      </Navbar>
     )
   }
 
@@ -24,10 +59,12 @@ const Layout = ({ location, title, children }) => {
     <div className="global-wrapper" data-is-root-path={isRootPath}>
       <header className="global-header">{header}</header>
       <main>{children}</main>
-      <footer>
+      <footer className="text-center">
         © {new Date().getFullYear()}, Built with
         {` `}
-        <a href="https://www.gatsbyjs.com">Gatsby</a>
+        <a href="https://www.gatsbyjs.com" className="footer-link">
+          Gatsby
+        </a>
       </footer>
     </div>
   )
