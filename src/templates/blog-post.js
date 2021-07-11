@@ -23,7 +23,7 @@ const BlogPostTemplate = ({ data, location }) => {
           backgroundPosition: "center",
           backgroundRepeat: "no-repeat",
           backgroundSize: "cover",
-          height: "60vh",
+          minHeight: "60vh",
           marginBottom: "4rem",
         }}
       />
