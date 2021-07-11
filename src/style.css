@@ -9,7 +9,7 @@
   padding-left: 20px;
   padding-right: 20px;
   padding-top: 10px;
-  padding-bottom: 5px;
+  padding-bottom: 10px;
 }
 
 .article-titles:hover {
@@ -39,4 +39,8 @@ a {
   border-top: none;
   border-left: none;
   border-right: none;
+}
+
+.date-align {
+  text-align: right !important;
 }

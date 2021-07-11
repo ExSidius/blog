@@ -1,5 +1,5 @@
 import * as React from "react"
-import { Link } from "gatsby"
+//import { Link } from "gatsby"
 import { Navbar, Nav, Image } from "react-bootstrap"
 
 import circle from "../images/gatsby-icon.png"
@@ -20,13 +20,14 @@ const Layout = ({ location, title, children }) => {
           {title}
         </Navbar.Brand>
         <Nav className="ml-auto">
-          <Nav.Link href="#home" className="mr-2 blank-link">
+          <Nav.Link
+            href="https://github.com/zaycation/ramsmusings001"
+            target="_blank"
+            className="mr-2 blank-link"
+          >
             View Src
           </Nav.Link>
-          <Nav.Link
-            href="#features"
-            className="follow-btn"
-          >
+          <Nav.Link href="#features" className="follow-btn">
             Follow Me
           </Nav.Link>
         </Nav>
@@ -35,19 +36,15 @@ const Layout = ({ location, title, children }) => {
   } else {
     header = (
       <Navbar variant="light" className="mb-4 px-3 py-3">
-        <Navbar.Brand href="/" className="d-flex flex-row align-items-center">
+        <Navbar.Brand
+          href="/"
+          className="d-flex flex-row align-items-center blank-link title-link"
+        >
           <Image src={circle} roundedCircle width="25px" className="mr-2" />
           {title}
         </Navbar.Brand>
         <Nav className="ml-auto">
-          <Nav.Link href="#home" className="mr-2">
-            View Src
-          </Nav.Link>
-          <Nav.Link
-            href="#features"
-            style={{ background: "black", color: "white" }}
-            className="px-3"
-          >
+          <Nav.Link href="#features" className="follow-btn">
             Follow Me
           </Nav.Link>
         </Nav>

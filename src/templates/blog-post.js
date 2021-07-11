@@ -2,7 +2,6 @@ import * as React from "react"
 import { Link, graphql } from "gatsby"
 import { Container, Row, Col } from "react-bootstrap"
 
-import Bio from "../components/bio"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 
@@ -16,6 +15,17 @@ const BlogPostTemplate = ({ data, location }) => {
       <Seo
         title={post.frontmatter.title}
         description={post.frontmatter.description || post.excerpt}
+      />
+      <Container
+        fluid
+        style={{
+          backgroundImage: `url(${post.frontmatter.img})`,
+          backgroundPosition: "center",
+          backgroundRepeat: "no-repeat",
+          backgroundSize: "cover",
+          height: "60vh",
+          marginBottom: "4rem",
+        }}
       />
       <Container>
         <Row>
@@ -47,14 +57,22 @@ const BlogPostTemplate = ({ data, location }) => {
               >
                 <li>
                   {previous && (
-                    <Link to={previous.fields.slug} rel="prev" className="blue-color">
+                    <Link
+                      to={previous.fields.slug}
+                      rel="prev"
+                      className="blue-color"
+                    >
                       ← {previous.frontmatter.title}
                     </Link>
                   )}
                 </li>
                 <li>
                   {next && (
-                    <Link to={next.fields.slug} rel="next" className="blue-color">
+                    <Link
+                      to={next.fields.slug}
+                      rel="next"
+                      className="blue-color"
+                    >
                       {next.frontmatter.title} →
                     </Link>
                   )}
@@ -89,6 +107,7 @@ export const pageQuery = graphql`
         title
         date(formatString: "MMMM DD, YYYY")
         description
+        img
       }
     }
     previous: markdownRemark(id: { eq: $previousPostId }) {

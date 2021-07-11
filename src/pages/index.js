@@ -2,7 +2,6 @@ import * as React from "react"
 import { Link, graphql } from "gatsby"
 import { Container, Row, Col } from "react-bootstrap"
 
-import Bio from "../components/bio"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 
@@ -17,7 +16,6 @@ const BlogIndex = ({ data, location }) => {
     return (
       <Layout location={location} title={siteTitle}>
         <Seo title="All posts" />
-        <Bio />
         <p>
           No blog posts found. Add markdown posts to "content/blog" (or the
           directory you specified for the "gatsby-source-filesystem" plugin in
@@ -44,8 +42,8 @@ const BlogIndex = ({ data, location }) => {
                       itemScope
                       itemType="http://schema.org/Article"
                     >
-                      <header className="d-flex flex-row align-items-stretch justify-content-start">
-                        <h6 className="mr-5 flex-end">
+                      <div className="d-flex flex-row align-items-stretch justify-content-start">
+                        <h6 className="mr-5 text-right">
                           {post.frontmatter.date}
                         </h6>
                         <Link to={post.fields.slug} itemProp="url">
@@ -54,10 +52,9 @@ const BlogIndex = ({ data, location }) => {
                             className="article-titles"
                           >
                             {title}
-                            <h4 />
                           </h6>
                         </Link>
-                      </header>
+                      </div>
                       {/*
                         <section>
                           <p
