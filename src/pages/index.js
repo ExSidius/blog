@@ -1,6 +1,6 @@
 import * as React from "react"
 import { Link, graphql } from "gatsby"
-import { Container, Row, Col } from "react-bootstrap"
+import { Container, Row, Col, Nav, Image } from "react-bootstrap"
 
 import Layout from "../components/layout"
 import Seo from "../components/seo"
@@ -9,6 +9,9 @@ import "../style.css"
 import "bootstrap/dist/css/bootstrap.min.css"
 
 const BlogIndex = ({ data, location }) => {
+  const [showDesc, setShowDesc] = React.useState(false)
+  const [showImg, setShowImg] = React.useState(false)
+
   const siteTitle = data.site.siteMetadata?.title || `Title`
   const posts = data.allMarkdownRemark.nodes
 
@@ -27,13 +30,51 @@ const BlogIndex = ({ data, location }) => {
 
   return (
     <Layout location={location} title={siteTitle}>
-      <Seo title="All posts" />
+      <Seo title="Ram's Musings | All Posts" />
       <Container>
         <Row>
           <Col>
+            <Nav variant="pills" defaultActiveKey="/home" className="mb-5">
+              <Nav.Item id="desc">
+                <Nav.Link
+                  onClick={() => {
+                    const elem = document.getElementById("desc")
+
+                    if (showDesc === false) {
+                      setShowDesc(true)
+                      elem.style.background = "#d4d4d450"
+                    } else {
+                      setShowDesc(false)
+                      elem.style.background = "#fff"
+                    }
+                  }}
+                >
+                  View Descriptions
+                </Nav.Link>
+              </Nav.Item>
+              <Nav.Item id="imgs">
+                <Nav.Link
+                  onClick={() => {
+                    const elem2 = document.getElementById("imgs")
+
+                    if (showImg === false) {
+                      setShowImg(true)
+                      elem2.style.background = "#d4d4d450"
+                    } else {
+                      setShowImg(false)
+                      elem2.style.background = "#fff"
+                    }
+                  }}
+                >
+                  View Images
+                </Nav.Link>
+              </Nav.Item>
+            </Nav>
             <ol style={{ listStyle: `none` }}>
               {posts.map(post => {
                 const title = post.frontmatter.title || post.fields.slug
+                const desc = post.frontmatter.description || post.excerpt
+                const img = post.frontmatter.img
 
                 return (
                   <li key={post.fields.slug}>
@@ -54,7 +95,17 @@ const BlogIndex = ({ data, location }) => {
                             {title}
                           </h6>
                         </Link>
+                        <div className="d-flex flex-column align-items-center justify-content-center">
+                          <Image
+                            src={showImg ? img : null}
+                            fluid
+                            className="mb-5"
+                            style={{ width: "20vw" }}
+                          />
+                        </div>
                       </div>
+                      <p>{showDesc ? desc : null}</p>
+
                       {/*
                         <section>
                           <p
@@ -96,6 +147,7 @@ export const pageQuery = graphql`
           date(formatString: "MMMM DD, YYYY")
           title
           description
+          img
         }
       }
     }

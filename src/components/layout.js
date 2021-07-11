@@ -27,7 +27,7 @@ const Layout = ({ location, title, children }) => {
           >
             View Src
           </Nav.Link>
-          <Nav.Link href="#features" className="follow-btn">
+          <Nav.Link href="#followme" className="follow-btn">
             Follow Me
           </Nav.Link>
         </Nav>
@@ -44,7 +44,7 @@ const Layout = ({ location, title, children }) => {
           {title}
         </Navbar.Brand>
         <Nav className="ml-auto">
-          <Nav.Link href="#features" className="follow-btn">
+          <Nav.Link href="#followme" className="follow-btn">
             Follow Me
           </Nav.Link>
         </Nav>

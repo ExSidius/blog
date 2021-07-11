@@ -1,4 +1,9 @@
 /* CSS Custom Properties Definitions */
+html,
+body {
+  overflow-x: hidden !important;
+  width: 100%;
+}
 
 .footer-link {
   color: #0077b6 !important;
