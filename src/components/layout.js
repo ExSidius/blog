@@ -23,12 +23,9 @@ const Layout = ({ location, title, children }) => {
           <Nav.Link
             href="https://github.com/zaycation/ramsmusings001"
             target="_blank"
-            className="mr-2 blank-link"
+            className="follow-btn"
           >
             View Src
-          </Nav.Link>
-          <Nav.Link href="#followme" className="follow-btn">
-            Follow Me
           </Nav.Link>
         </Nav>
       </Navbar>
@@ -44,8 +41,12 @@ const Layout = ({ location, title, children }) => {
           {title}
         </Navbar.Brand>
         <Nav className="ml-auto">
-          <Nav.Link href="#followme" className="follow-btn">
-            Follow Me
+          <Nav.Link
+            href="https://github.com/zaycation/ramsmusings001"
+            target="_blank"
+            className="follow-btn"
+          >
+            View Src
           </Nav.Link>
         </Nav>
       </Navbar>
@@ -57,11 +58,14 @@ const Layout = ({ location, title, children }) => {
       <header className="global-header">{header}</header>
       <main>{children}</main>
       <footer className="text-center">
-        © Ram's Musings {new Date().getFullYear()}, Built with
+        © Ram's Musings {new Date().getFullYear()}
+        {/*
+        , Built with
         {` `}
         <a href="https://www.gatsbyjs.com" className="footer-link">
           Gatsby
         </a>
+        */}
       </footer>
     </div>
   )

@@ -32,8 +32,9 @@ const BlogIndex = ({ data, location }) => {
     <Layout location={location} title={siteTitle}>
       <Seo title="Ram's Musings | All Posts" />
       <Container>
-        <Row>
+        <Row className="article-sect">
           <Col>
+            {/*
             <Nav variant="pills" defaultActiveKey="/home" className="mb-5">
               <Nav.Item id="desc">
                 <Nav.Link
@@ -70,6 +71,7 @@ const BlogIndex = ({ data, location }) => {
                 </Nav.Link>
               </Nav.Item>
             </Nav>
+                */}
             <ol style={{ listStyle: `none` }}>
               {posts.map(post => {
                 const title = post.frontmatter.title || post.fields.slug

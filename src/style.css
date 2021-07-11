@@ -49,3 +49,9 @@ a {
 .date-align {
   text-align: right !important;
 }
+
+@media (min-width: 992px) {
+  .article-sect {
+    margin-left: 25vw !important;
+  }
+}
