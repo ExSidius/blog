@@ -1,4 +1,15 @@
 /* CSS Custom Properties Definitions */
+@import url("https://fonts.googleapis.com/css2?family=Crimson+Text&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+
+.nav-font {
+  font-family: "Roboto", sans-serif !important;
+}
+
+body {
+  font-family: "Crimson Text", sans-serif !important;
+}
+
 html,
 body {
   overflow-x: hidden !important;
@@ -15,6 +26,7 @@ body {
   padding-right: 20px;
   padding-top: 10px;
   padding-bottom: 10px;
+  font-size: large;
 }
 
 .article-titles:hover {
@@ -31,11 +43,11 @@ a {
 }
 
 .follow-btn {
-  color: #fff !important;
-  background: #000 !important;
+  color: #000 !important;
 }
 
 .follow-btn:hover {
+  color: #fff !important;
   background: #0077b6 !important;
 }
 
@@ -54,4 +66,97 @@ a {
   .article-sect {
     margin-left: 25vw !important;
   }
+  ul,
+  li,
+  p {
+    font-size: 1.25rem !important;
+  }
+  .article-titles {
+    font-size: x-large;
+  }
+}
+
+ul.jsx-2008102337 li.jsx-2008102337 a.jsx-2008102337 {
+  font-weight: bold;
+  color: var(--link-color);
+  -webkit-text-decoration: none;
+  text-decoration: none;
+}
+li {
+  text-align: -webkit-match-parent;
+}
+ul,
+ol {
+  list-style: none;
+}
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+ul[class],
+ol[class],
+li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+ul[class],
+ol[class] {
+  padding: 0;
+}
+ul,
+ol {
+  list-style: none;
+}
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+ul {
+  display: block;
+  list-style-type: disc;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  padding-inline-start: 40px;
+}
+ul.jsx-2008102337 li.jsx-2008102337 {
+  padding: 10px 15px;
+}
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+ul[class],
+ol[class],
+li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+li {
+  display: list-item;
+  text-align: -webkit-match-parent;
+}
+ul,
+ol {
+  list-style: none;
 }

@@ -11,7 +11,7 @@ const Layout = ({ location, title, children }) => {
 
   if (isRootPath) {
     header = (
-      <Navbar variant="light" className="mb-4 px-3 py-3">
+      <Navbar variant="light" className="mb-4 px-3 py-3 nav-font">
         <Navbar.Brand
           href="/"
           className="d-flex flex-row align-items-center blank-link title-link"
@@ -32,7 +32,7 @@ const Layout = ({ location, title, children }) => {
     )
   } else {
     header = (
-      <Navbar variant="light" className="mb-4 px-3 py-3">
+      <Navbar variant="light" className="mb-4 px-3 py-3 nav-font">
         <Navbar.Brand
           href="/"
           className="d-flex flex-row align-items-center blank-link title-link"

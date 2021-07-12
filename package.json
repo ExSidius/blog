@@ -24,17 +24,23 @@
     "gatsby-remark-prismjs": "^5.6.0",
     "gatsby-remark-responsive-iframe": "^4.6.0",
     "gatsby-remark-smartypants": "^4.6.0",
+    "gatsby-remark-vega": "^0.2.6",
     "gatsby-source-filesystem": "^3.9.0",
     "gatsby-transformer-remark": "^4.6.0",
     "gatsby-transformer-sharp": "^3.9.0",
+    "lodash": "^4.17.21",
     "netlify-cms-app": "^2.15.26",
     "prismjs": "^1.24.1",
     "react": "^17.0.1",
     "react-bootstrap": "^1.6.1",
     "react-dom": "^17.0.1",
     "react-helmet": "^6.1.0",
+    "rehype-react": "^6.2.1",
     "typeface-merriweather": "0.0.72",
-    "typeface-montserrat": "0.0.75"
+    "typeface-montserrat": "0.0.75",
+    "vega": "^5.20.2",
+    "vega-embed": "^6.18.2",
+    "vega-lite": "^5.1.0"
   },
   "devDependencies": {
     "prettier": "2.3.2"

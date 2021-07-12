@@ -23,6 +23,7 @@ module.exports = {
       resolve: `gatsby-transformer-remark`,
       options: {
         plugins: [
+          `gatsby-remark-vega`,
           {
             resolve: `gatsby-remark-images`,
             options: {

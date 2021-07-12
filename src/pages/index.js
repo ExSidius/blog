@@ -1,6 +1,6 @@
 import * as React from "react"
 import { Link, graphql } from "gatsby"
-import { Container, Row, Col, Nav, Image } from "react-bootstrap"
+import { Container, Row, Col } from "react-bootstrap"
 
 import Layout from "../components/layout"
 import Seo from "../components/seo"
@@ -9,8 +9,8 @@ import "../style.css"
 import "bootstrap/dist/css/bootstrap.min.css"
 
 const BlogIndex = ({ data, location }) => {
-  const [showDesc, setShowDesc] = React.useState(false)
-  const [showImg, setShowImg] = React.useState(false)
+  //const [showDesc, setShowDesc] = React.useState(false)
+  //const [showImg, setShowImg] = React.useState(false)
 
   const siteTitle = data.site.siteMetadata?.title || `Title`
   const posts = data.allMarkdownRemark.nodes
@@ -72,44 +72,38 @@ const BlogIndex = ({ data, location }) => {
               </Nav.Item>
             </Nav>
                 */}
-            <ol style={{ listStyle: `none` }}>
+
+            <ul style={{ listStyle: `none` }} className="jsx-2008102337">
               {posts.map(post => {
                 const title = post.frontmatter.title || post.fields.slug
-                const desc = post.frontmatter.description || post.excerpt
-                const img = post.frontmatter.img
+                //const desc = post.frontmatter.description || post.excerpt
+                //const img = post.frontmatter.img
 
                 return (
-                  <li key={post.fields.slug}>
-                    <article
-                      className="post-list-item"
-                      itemScope
-                      itemType="http://schema.org/Article"
+                  <li key={post.fields.slug} className="jsx-2008102337">
+                    <span className="jsx-2008102337">
+                      {post.frontmatter.date}
+                    </span>
+                    <Link
+                      to={post.fields.slug}
+                      itemProp="url"
+                      className="article-titles jsx-2008102337"
                     >
-                      <div className="d-flex flex-row align-items-stretch justify-content-start">
-                        <h6 className="mr-5 text-right">
-                          {post.frontmatter.date}
-                        </h6>
-                        <Link to={post.fields.slug} itemProp="url">
-                          <h6
-                            itemProp="headline flex-start"
-                            className="article-titles"
-                          >
-                            {title}
-                          </h6>
-                        </Link>
-                        <div className="d-flex flex-column align-items-center justify-content-center">
-                          <Image
-                            src={showImg ? img : null}
-                            fluid
-                            className="mb-5"
-                            style={{ width: "20vw" }}
-                          />
-                        </div>
+                      {title}
+                    </Link>
+                    {/*
+                    <div>{renderAst(post.htmlAst)}</div>
+                      <div className="d-flex flex-column align-items-center justify-content-center">
+                        <Image
+                          src={showImg ? img : null}
+                          fluid
+                          className="mb-5"
+                          style={{ width: "20vw" }}
+                        />
                       </div>
                       <p>{showDesc ? desc : null}</p>
 
-                      {/*
-                        <section>
+                      <section>
                           <p
                             dangerouslySetInnerHTML={{
                               __html: post.frontmatter.description || post.excerpt,
@@ -118,11 +112,10 @@ const BlogIndex = ({ data, location }) => {
                           />
                         </section>
                       */}
-                    </article>
                   </li>
                 )
               })}
-            </ol>
+            </ul>
           </Col>
         </Row>
       </Container>
@@ -142,6 +135,7 @@ export const pageQuery = graphql`
     allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
       nodes {
         excerpt
+        htmlAst
         fields {
           slug
         }
