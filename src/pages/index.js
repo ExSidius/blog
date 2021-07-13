@@ -33,7 +33,7 @@ const BlogIndex = ({ data, location }) => {
       <Seo title="Ram's Musings | All Posts" />
       <Container>
         <Row className="article-sect">
-          <Col>
+          <Col className="main-cont">
             {/*
             <Nav variant="pills" defaultActiveKey="/home" className="mb-5">
               <Nav.Item id="desc">
@@ -80,14 +80,17 @@ const BlogIndex = ({ data, location }) => {
                 //const img = post.frontmatter.img
 
                 return (
-                  <li key={post.fields.slug} className="jsx-2008102337">
-                    <span className="jsx-2008102337">
+                  <li
+                    key={post.fields.slug}
+                    className="jsx-2008102337 posts-list"
+                  >
+                    <span className="jsx-2008102337 date-align text-right">
                       {post.frontmatter.date}
                     </span>
                     <Link
                       to={post.fields.slug}
                       itemProp="url"
-                      className="article-titles jsx-2008102337"
+                      className="article-titles jsx-2008102337 text-left"
                     >
                       {title}
                     </Link>

@@ -4,6 +4,15 @@ import { Container, Row, Col } from "react-bootstrap"
 
 import Layout from "../components/layout"
 import Seo from "../components/seo"
+import rehypeReact from "rehype-react"
+import Vega, { KEY as VegaKey } from "gatsby-remark-vega/dist/client"
+
+const renderAst = new rehypeReact({
+  createElement: React.createElement,
+  components: {
+    [VegaKey]: Vega,
+  },
+}).Compiler
 
 const BlogPostTemplate = ({ data, location }) => {
   const post = data.markdownRemark
@@ -43,6 +52,9 @@ const BlogPostTemplate = ({ data, location }) => {
                 dangerouslySetInnerHTML={{ __html: post.html }}
                 itemProp="articleBody"
               />
+              {/*
+              <div itemProp="articleBody">{renderAst(post.htmlAst)}</div>
+              */}
               <hr />
             </article>
             <nav className="blog-post-nav">
@@ -101,7 +113,6 @@ export const pageQuery = graphql`
     }
     markdownRemark(id: { eq: $id }) {
       id
-      htmlAst
       excerpt(pruneLength: 160)
       html
       frontmatter {

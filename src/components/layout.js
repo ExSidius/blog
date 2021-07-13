@@ -1,6 +1,6 @@
 import * as React from "react"
 //import { Link } from "gatsby"
-import { Navbar, Nav, Image } from "react-bootstrap"
+import { Navbar, Nav, Image, Container } from "react-bootstrap"
 
 import circle from "../images/gatsby-icon.png"
 
@@ -11,45 +11,52 @@ const Layout = ({ location, title, children }) => {
 
   if (isRootPath) {
     header = (
-      <Navbar variant="light" className="mb-4 px-3 py-3 nav-font">
-        <Navbar.Brand
-          href="/"
-          className="d-flex flex-row align-items-center blank-link title-link"
-        >
-          <Image src={circle} roundedCircle width="25px" className="mr-2" />
-          {title}
-        </Navbar.Brand>
-        <Nav className="ml-auto">
-          <Nav.Link
-            href="https://github.com/zaycation/ramsmusings001"
-            target="_blank"
-            className="follow-btn"
+      <Container>
+        <Navbar variant="light" className="mb-4 px-3 py-3 nav-font">
+          <Navbar.Brand
+            href="/"
+            className="d-flex flex-row align-items-center blank-link title-link"
           >
-            View Src
-          </Nav.Link>
-        </Nav>
-      </Navbar>
+            <Image src={circle} roundedCircle width="25px" className="mr-2" />
+            {title}
+          </Navbar.Brand>
+          <Nav className="ml-auto">
+            <Nav.Link
+              href="https://github.com/zaycation/ramsmusings001"
+              target="_blank"
+              className="follow-btn"
+            >
+              View Src
+            </Nav.Link>
+          </Nav>
+        </Navbar>
+      </Container>
     )
   } else {
     header = (
-      <Navbar variant="light" className="mb-4 px-3 py-3 nav-font">
-        <Navbar.Brand
-          href="/"
-          className="d-flex flex-row align-items-center blank-link title-link"
+      <Container>
+        <Navbar
+          variant="light"
+          className="mb-4 px-3 py-3 nav-font"
         >
-          <Image src={circle} roundedCircle width="25px" className="mr-2" />
-          {title}
-        </Navbar.Brand>
-        <Nav className="ml-auto">
-          <Nav.Link
-            href="https://github.com/zaycation/ramsmusings001"
-            target="_blank"
-            className="follow-btn"
+          <Navbar.Brand
+            href="/"
+            className="d-flex flex-row align-items-center blank-link title-link"
           >
-            View Src
-          </Nav.Link>
-        </Nav>
-      </Navbar>
+            <Image src={circle} roundedCircle width="25px" className="mr-2" />
+            {title}
+          </Navbar.Brand>
+          <Nav className="ml-auto">
+            <Nav.Link
+              href="https://github.com/zaycation/ramsmusings001"
+              target="_blank"
+              className="follow-btn"
+            >
+              View Src
+            </Nav.Link>
+          </Nav>
+        </Navbar>
+      </Container>
     )
   }
 

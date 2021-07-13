@@ -27,6 +27,8 @@ body {
   padding-top: 10px;
   padding-bottom: 10px;
   font-size: large;
+  text-align: left !important;
+  font-weight: 900 !important;
 }
 
 .article-titles:hover {
@@ -58,14 +60,11 @@ a {
   border-right: none;
 }
 
-.date-align {
-  text-align: right !important;
-}
-
 @media (min-width: 992px) {
-  .article-sect {
+  /*.article-sect {
     margin-left: 25vw !important;
   }
+  */
   ul,
   li,
   p {
@@ -76,87 +75,42 @@ a {
   }
 }
 
-ul.jsx-2008102337 li.jsx-2008102337 a.jsx-2008102337 {
-  font-weight: bold;
-  color: var(--link-color);
-  -webkit-text-decoration: none;
-  text-decoration: none;
+@media (min-width: 650px) {
+  ul.jsx-2008102337 li.jsx-2008102337 span.jsx-2008102337 {
+    display: inline-block;
+    width: 160px;
+    padding-right: 10px;
+    text-align: right;
+    font-size: inherit;
+    margin-left: 18vw;
+  }
 }
-li {
-  text-align: -webkit-match-parent;
-}
-ul,
-ol {
-  list-style: none;
-}
-body,
-h1,
-h2,
-h3,
-h4,
-p,
-ul[class],
-ol[class],
-li,
-figure,
-figcaption,
-blockquote,
-dl,
-dd {
-  margin: 0;
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
 
-ul[class],
-ol[class] {
-  padding: 0;
+ul.jsx-2008102337 li.jsx-2008102337 span.jsx-2008102337 {
+  color: #5b5b5b;
+  font-size: 18px;
 }
+
 ul,
 ol {
   list-style: none;
 }
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
-ul {
-  display: block;
-  list-style-type: disc;
-  margin-block-start: 1em;
-  margin-block-end: 1em;
-  margin-inline-start: 0px;
-  margin-inline-end: 0px;
-  padding-inline-start: 40px;
-}
-ul.jsx-2008102337 li.jsx-2008102337 {
+ul.jsx-2008102337,
+li.jsx-2008102337 {
   padding: 10px 15px;
 }
-body,
-h1,
-h2,
-h3,
-h4,
-p,
-ul[class],
-ol[class],
-li,
-figure,
-figcaption,
-blockquote,
-dl,
-dd {
-  margin: 0;
-}
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
-li {
-  display: list-item;
-  text-align: -webkit-match-parent;
-}
-ul,
-ol {
-  list-style: none;
+
+body {
+  min-height: 100vh;
+  -webkit-scroll-behavior: smooth;
+  -moz-scroll-behavior: smooth;
+  -ms-scroll-behavior: smooth;
+  scroll-behavior: smooth;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
 }
