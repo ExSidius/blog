@@ -26,7 +26,7 @@ const Layout = ({ location, title, children }) => {
               target="_blank"
               className="follow-btn"
             >
-              View Src
+              Source
             </Nav.Link>
           </Nav>
         </Navbar>
@@ -35,10 +35,7 @@ const Layout = ({ location, title, children }) => {
   } else {
     header = (
       <Container>
-        <Navbar
-          variant="light"
-          className="mb-4 px-3 py-3 nav-font"
-        >
+        <Navbar variant="light" className="mb-4 px-3 py-3 nav-font">
           <Navbar.Brand
             href="/"
             className="d-flex flex-row align-items-center blank-link title-link"
@@ -52,7 +49,7 @@ const Layout = ({ location, title, children }) => {
               target="_blank"
               className="follow-btn"
             >
-              View Src
+              Source
             </Nav.Link>
           </Nav>
         </Navbar>
